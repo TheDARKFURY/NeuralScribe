@@ -5,11 +5,11 @@ import { useState } from "react";
 
 const Home = () => {
   const [userInput, setUserInput] = useState("");
-  const [apiOutput, setApiOutput] = useState("");
+  const [apiOutput, setApiOutput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
   const onUserChangedText = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setUserInput(event.target.value);
   };
 
@@ -18,15 +18,14 @@ const Home = () => {
     setIsGenerating(true);
 
     console.log("Calling OpenAI...");
-    const response = await fetch("/api/generate", {
-      method: "POST",
+    const response = await fetch('/api/generate', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ userInput }),
     });
-
-    console.log(JSON.stringify({ userInput }));
+    
     const data = await response.json();
     const { output } = data;
     console.log("OpenAI replied...", output.text);
