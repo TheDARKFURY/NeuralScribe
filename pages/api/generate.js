@@ -6,7 +6,9 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = "";
+const basePromptPrefix = `Write me a blog post in the style of Wednesday Addams with the title below. Please make sure the blog post goes in-depth on the topic and shows that the writer did their research.
+
+Title:`;
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
