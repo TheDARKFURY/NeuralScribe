@@ -6,7 +6,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = `Write me a blog post in the style of Wednesday Addams with the title below. Please make sure the blog post goes in-depth on the topic and shows that the writer did their research.
+const basePromptPrefix = `Write me few pages of the book in the style of Wednesday Addams with the title below. Please make sure the blog post goes in-depth on the topic and shows that the writer did their research.
 
 Title:`;
 const generateAction = async (req, res) => {
@@ -17,7 +17,7 @@ const generateAction = async (req, res) => {
     model: 'text-davinci-003',
     prompt: `${basePromptPrefix}${req.body.userInput}\n`,
     temperature: 0.7,
-    max_tokens: 250,
+    max_tokens: 2500,
   });
   
   const basePromptOutput = baseCompletion.data.choices.pop();
