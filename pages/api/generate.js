@@ -6,7 +6,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = `Write me few pages of the book in the style of Wednesday Addams with the title below. Please make sure the blog post goes in-depth on the topic and shows that the writer did their research.
+const basePromptPrefix = `Write me a interesting story in the style of Wednesday Addams with the title below. Please make sure the blog post goes in-depth on the topic and shows that the writer did their research.
 
 Title:`;
 const generateAction = async (req, res) => {
