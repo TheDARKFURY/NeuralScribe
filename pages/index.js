@@ -50,6 +50,7 @@ const Home = () => {
             {/* <h2>Let NeuralScribe do the heavy lifting (or heavy thinking) for you</h2> */}
           </div>
         </div>
+        
         <div className="prompt-container">
           <textarea
             placeholder="start typing here"
